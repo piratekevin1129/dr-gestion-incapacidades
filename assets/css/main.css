@@ -1,0 +1,105 @@
+html,body{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+    line-height: normal;
+    box-sizing: border-box;
+    display: block;
+}
+div{
+    box-sizing: border-box;
+}
+button{
+    outline: none;
+    outline-width: 0;
+    display: block;
+    position: relative
+}
+
+#contenedor{
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+#fondo,#mesa{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+#fondo{
+    background-position: top center;
+    background-image: url(../images/fondo.png);
+}
+#mesa{
+    background-position: bottom center;
+    background-image: url(../images/mesa.png);
+}
+
+#titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+#titulo h1,#titulo h2{
+    font-family: 'Helvetica-Bold';
+    font-size: 24px;
+}
+#titulo h1{
+    color: #000000;
+    margin: 5px 0px;
+}
+#titulo h2{
+    padding: 7px 10px;
+    color: #ffffff;
+    background-color: #E20613;
+}
+
+#personaje{
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    height: calc(100% - 100px);
+    height: -moz-calc(100% - 100px);
+    top: 100px;
+    left: 50%;
+    left: calc(50% - 200px);
+    left: -moz-calc(50% - 200px);
+}
+#personaje-foto{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../images/fotos/1.png);
+}
+
+#app{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+

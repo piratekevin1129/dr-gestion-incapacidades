@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/css/fonts.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/hoja.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/tiquetera.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/sellos.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/manual.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/instruccion.css" rel="stylesheet" type="text/css" />
+    <title>Gestión de incapacidades</title>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="fondo">
+            <div id="titulo">
+                <h1>Gestión de</h1>
+                <h2>Incapacidades</h2>
+            </div>
+        </div>
+        <div id="personaje">
+            <div id="personaje-foto"></div>
+        </div>
+        <div id="mesa"></div>
+        <div id="app">
+            <div id="manual">
+                <div class="manual-sombra"></div>
+                <img src="assets/images/libro.png" class="manual-img" />
+                <img src="assets/images/libro-over.png" class="manual-img-over" />
+            </div>
+            <div id="sellos">
+                <div id="sellos-azules">
+                    <div class="sello" id="sello-1">
+                        <img src="assets/images/sello-azul.png" class="sello-img" />
+                        <img src="assets/images/sello-over.png" class="sello-img-over" />
+                        <p>Empleador</p>
+                    </div>
+                    <div class="sello" id="sello-2">
+                        <img src="assets/images/sello-azul.png" class="sello-img" />
+                        <img src="assets/images/sello-over.png" class="sello-img-over" />
+                        <p>Fondo de pensiones</p>
+                    </div>
+                    <div class="sello" id="sello-3">
+                        <img src="assets/images/sello-azul.png" class="sello-img" />
+                        <img src="assets/images/sello-over.png" class="sello-img-over" />
+                        <p>EPS</p>
+                    </div>
+                    <div class="sello" id="sello-4">
+                        <img src="assets/images/sello-azul.png" class="sello-img" />
+                        <img src="assets/images/sello-over.png" class="sello-img-over" />
+                        <p>ARL</p>
+                    </div>
+                </div>
+                <div id="sellos-rojos">
+                    <div class="sello" id="sello-5">
+                        <img src="assets/images/sello-rojo.png" class="sello-img" />
+                        <img src="assets/images/sello-over.png" class="sello-img-over" />
+                        <p>100%</p>
+                    </div>
+                    <div class="sello" id="sello-6">
+                        <img src="assets/images/sello-rojo.png" class="sello-img" />
+                        <img src="assets/images/sello-over.png" class="sello-img-over" />
+                        <p>66.66%</p>
+                    </div>
+                    <div class="sello" id="sello-7">
+                        <img src="assets/images/sello-rojo.png" class="sello-img" />
+                        <img src="assets/images/sello-over.png" class="sello-img-over" />
+                        <p>50%</p>
+                    </div>
+                </div>
+            </div>
+            <div id="tiquete">
+                <img class="tiquete-img-base" src="assets/images/tiquete-ranura.svg" />
+                <div id="tiquetera-hoja-wrap">
+                    <div id="tiquetera-hoja">
+                        <img src="assets/images/tiquete-borde.svg" />
+                        <div id="tiquetera-hoja-content">
+                            <h1>Resultado del trámite</h1>
+                            <h2 id="tiquete-titulo">Atención al detalle</h2>
+                            <p id="tiquete-texto">
+                                Has respondido bien al reconocimiento nominal pero no quien es el <span>responsable</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <img class="tiquete-img-mask" src="assets/images/tiquete-mascara.svg" />
+            </div>
+            <div id="hoja">
+                <div id="hoja-wrapper">
+                    <h1 class="hoja-titulo">Solicitud de pago</h1>
+                    <div class="hoja-col">
+                        <div class="hoja-row hoja-row-20">
+                            <img src="assets/images/fotos/1.png" />
+                        </div>
+                        <div class="hoja-row hoja-row-80">
+                            <p class="label">Colaborador</p>
+                            <p class="input">Carlos Ruiz</p>
+                            <p class="label">Cargo</p>
+                            <p class="input">Auxiliar de farmacia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hoja-detalles">
+                        <h1>Detalles de incapacidad</h1>
+                        <p class="label">Origen/Tipo</p>
+                        <p class="input">Paternidad</p>
+                        <div class="hoja-col">
+                            <div class="hoja-row">
+                                <p class="label">Periodo</p>
+                                <p class="input">Semana 1</p>
+                            </div>
+                            <div class="hoja-row">
+                                <p class="label">Pendiente pago</p>
+                                <p class="input2">Pendiente pago</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hoja-validacion">
+                        <h1>Zona de validación (Estampe aqui)</h1>
+                        <div class="hoja-col">
+                            <div class="hoja-row">
+                                <div class="hoja-estampa hoja-estampa-1">
+                                    <p>Responsable</p>
+                                    <div id="hoja-sello-1">
+                                        <img src="assets/images/sello-azul-borde.svg" />
+                                        <p id="hoja-sello-txt-1">EPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hoja-row">
+                                <div class="hoja-estampa hoja-estampa-2">
+                                    <p>Reconocimiento nominal</p>
+                                    <div id="hoja-sello-2">
+                                        <img src="assets/images/sello-rojo-borde.svg" />
+                                        <p id="hoja-sello-txt-2">100%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="manual-container" class="manual-container-off">
+                <div id="manual-container-box">
+                    <button type="button" id="manual-container-close-btn"></button>
+                    <div class="manual-container-hoja">
+                        <h1>Normatividad vigente</h1>
+                        <h2>Enfermedad de origen común</h2>
+                        <table>
+                            <thead>
+                                <th style="width: 30%;">
+                                    <p>Periodo</p>
+                                </th>
+                                <th style="width: 30%;">
+                                    <p>Responsable</p>
+                                </th>
+                                <th style="width: 40%;">
+                                    <p>Reconocimiento nominal</p>
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Dia 1 y 2</p>
+                                    </td>
+                                    <td>
+                                        <p>Empleador</p>
+                                    </td>
+                                    <td>
+                                        <p>100% del IBC</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Dia 3 y 90</p>
+                                    </td>
+                                    <td>
+                                        <p>EPS</p>
+                                    </td>
+                                    <td>
+                                        <p>66.67% del IBC de la incapacidad inicial</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Día 91 a 180</p>
+                                    </td>
+                                    <td>
+                                        <p>EPS</p>
+                                    </td>
+                                    <td>
+                                        <p>50% del IBC de la incapacidad inicial, le corresponde a EPS, emitir concepto favorable o desfavorable al cumplir 120 días</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Día 181 a 540</p>
+                                    </td>
+                                    <td>
+                                        <p>Fondo de Pensiones</p>
+                                    </td>
+                                    <td>
+                                        <p>50% del IBC de la incapacidad inicial</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Día 541 en adelante</p>
+                                    </td>
+                                    <td>
+                                        <p>EPS</p>
+                                    </td>
+                                    <td>
+                                        <p>50% del IBC; se inicia trámite de pérdida de capacidad laboral, concepto de rehabilitación.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2>Accidente de trabajo y/o enfermedad laboral</h2>
+                        <table>
+                            <thead>
+                                <th style="width: 30%;">
+                                    <p>Periodo</p>
+                                </th>
+                                <th style="width: 30%;">
+                                    <p>Responsable</p>
+                                </th>
+                                <th style="width: 40%;">
+                                    <p>Reconocimiento nominal</p>
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Día 2 en adelante</p>
+                                    </td>
+                                    <td>
+                                        <p>ARL</p>
+                                    </td>
+                                    <td>
+                                        <p>100% del IBC</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Día 2 en adelante</p>
+                                    </td>
+                                    <td>
+                                        <p>ARL</p>
+                                    </td>
+                                    <td>
+                                        <p>100% del IBC</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2>Licencia de Maternidad</h2>
+                        <table>
+                            <thead>
+                                <th style="width: 30%;">
+                                    <p>Periodo</p>
+                                </th>
+                                <th style="width: 30%;">
+                                    <p>Responsable</p>
+                                </th>
+                                <th style="width: 40%;">
+                                    <p>Reconocimiento nominal</p>
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Día 1 a 126</p>
+                                    </td>
+                                    <td>
+                                        <p>EPS</p>
+                                    </td>
+                                    <td>
+                                        <p>100% IBC del último mes</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2>Licencia de Paternidad</h2>
+                        <table>
+                            <thead>
+                                <th style="width: 30%;">
+                                    <p>Periodo</p>
+                                </th>
+                                <th style="width: 30%;">
+                                    <p>Responsable</p>
+                                </th>
+                                <th style="width: 40%;">
+                                    <p>Reconocimiento nominal</p>
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Día 1 hasta completar dos semanas</p>
+                                    </td>
+                                    <td>
+                                        <p>ARL</p>
+                                    </td>
+                                    <td>
+                                        <p>100% IBC del último mes</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="instruccion" class="instruccion-off">
+            <div id="instruccion-back">
+                <div class="instruccion-back-left"></div>
+                <div class="instruccion-back-right"></div>
+                <div class="instruccion-back-top"></div>
+                <div class="instruccion-back-bottom"></div>
+            </div>
+            <div id="instruccion-box">
+                <div id="instruccion-box-icon"></div>
+                <h1 id="instruccion-title">
+                    PROCESAR
+                </h1>
+                <p id="instruccion-text">
+                    Una vez estampado, presiona este botón para Archivar el Expediente y verificar si tu decisión fue correcta.
+                </p>
+                <button type="button" id="instruccion-btn">
+                    <span>Iniciar turno</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
