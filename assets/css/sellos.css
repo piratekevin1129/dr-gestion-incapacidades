@@ -48,7 +48,7 @@
     transform: translateX(-50%);
     visibility: hidden;
 
-    transition: width 0.25s, visibility 0.25s;
+    transition: width 0.25s, visibility 0.25s, bottom 0.25s;
 }
 .sello-img,
 .sello-img-over{
@@ -87,6 +87,7 @@
 }
 .sello:hover::after{
     width: 80%;
+    bottom: -10px;
     visibility: visible;
     transition: width 0.25s, visibility 0s;
 }

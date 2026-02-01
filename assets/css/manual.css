@@ -168,15 +168,15 @@
 #manual:hover{
     cursor: pointer;
     bottom: 16%;
-    bottom: calc(15% + 20px);
-    bottom: -moz-calc(15% + 20px);
+    bottom: calc(15% + 10px);
+    bottom: -moz-calc(15% + 10px);
 }
 #manual:hover .manual-sombra{
     width: 70%;
     left: 15%;
     bottom: 15%;
-    bottom: calc(15% - 20px);
-    bottom: -moz-calc(15% - 20px);
+    bottom: calc(15% - 10px);
+    bottom: -moz-calc(15% - 10px);
     opacity: 1;
 }
 #manual:hover .manual-img-over{
