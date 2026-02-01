@@ -28,6 +28,12 @@ button{
     width: 100%;
     height: 100%
 }
+.contenedor-blur-off{
+    filter: blur(0px);
+}
+.contenedor-blur-on{
+    filter: blur(2px);
+}
 
 #fondo,#mesa{
     position: absolute;

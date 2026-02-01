@@ -12,9 +12,15 @@
     <link href="assets/css/manual.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/instruccion.css" rel="stylesheet" type="text/css" />
     <title>Gestión de incapacidades</title>
+
+    <script>
+        function getE(idname){
+            return document.getElementById(idname)
+        }
+    </script>
 </head>
 <body>
-    <div id="contenedor">
+    <div id="contenedor" class="contenedor-blur-off">
         <div id="fondo">
             <div id="titulo">
                 <h1>Gestión de</h1>
@@ -63,7 +69,7 @@
                     <div class="sello" id="sello-6">
                         <img src="assets/images/sello-rojo.png" class="sello-img" />
                         <img src="assets/images/sello-over.png" class="sello-img-over" />
-                        <p>66.66%</p>
+                        <p>66.67%</p>
                     </div>
                     <div class="sello" id="sello-7">
                         <img src="assets/images/sello-rojo.png" class="sello-img" />
@@ -103,7 +109,7 @@
                         </div>
                     </div>
                     
-                    <div class="hoja-detalles">
+                    <div class="hoja-detalles" id="ref-hoja-detalles">
                         <h1>Detalles de incapacidad</h1>
                         <p class="label">Origen/Tipo</p>
                         <p class="input">Paternidad</p>
@@ -119,7 +125,7 @@
                         </div>
                     </div>
                     
-                    <div class="hoja-validacion">
+                    <div class="hoja-validacion" id="ref-hoja-validacion">
                         <h1>Zona de validación (Estampe aqui)</h1>
                         <div class="hoja-col">
                             <div class="hoja-row">
@@ -316,28 +322,35 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="instruccion" class="instruccion-off">
-            <div id="instruccion-back">
-                <div class="instruccion-back-left"></div>
-                <div class="instruccion-back-right"></div>
-                <div class="instruccion-back-top"></div>
-                <div class="instruccion-back-bottom"></div>
-            </div>
-            <div id="instruccion-box">
-                <div id="instruccion-box-icon"></div>
-                <h1 id="instruccion-title">
-                    PROCESAR
-                </h1>
-                <p id="instruccion-text">
-                    Una vez estampado, presiona este botón para Archivar el Expediente y verificar si tu decisión fue correcta.
-                </p>
-                <button type="button" id="instruccion-btn">
-                    <span>Iniciar turno</span>
-                </button>
-            </div>
-        </div>
-
+        </div>    
     </div>
+
+    <div id="instruccion" class="instruccion-off">
+        <div id="instruccion-back">
+            <div id="instruccion-back-left"></div>
+            <div id="instruccion-back-right"></div>
+            <div id="instruccion-back-top"></div>
+            <div id="instruccion-back-bottom"></div>
+        </div>
+        <div id="instruccion-box">
+            <div id="instruccion-box-icon" class="instruccion-box-icon-default"></div>
+            <h1 id="instruccion-title">
+                PROCESAR
+            </h1>
+            <p id="instruccion-text">
+                Una vez estampado, presiona este botón para Archivar el Expediente y verificar si tu decisión fue correcta.
+            </p>
+            <button type="button" id="instruccion-btn" onclick="nextInstruccion()">
+                <span>Iniciar turno</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="assets/js/instrucciones.js"></script>
+    <script>
+        window.onload = function(){
+            setInstrucciones()
+        }
+    </script>
 </body>
 </html>
