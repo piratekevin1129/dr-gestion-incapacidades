@@ -39,39 +39,39 @@
             </div>
             <div id="sellos">
                 <div id="sellos-azules">
-                    <div class="sello" id="sello-1" onclick="clickSello(1)">
+                    <div class="sello sello-normal" id="sello-1" onclick="clickSello(1,'azul')">
                         <img src="assets/images/sello-azul.png" class="sello-img" />
                         <img src="assets/images/sello-over.png" class="sello-img-over" />
                         <p>Empleador</p>
                     </div>
-                    <div class="sello" id="sello-2" onclick="clickSello(2)">
+                    <div class="sello sello-normal" id="sello-2" onclick="clickSello(2,'azul')">
                         <img src="assets/images/sello-azul.png" class="sello-img" />
                         <img src="assets/images/sello-over.png" class="sello-img-over" />
                         <p>Fondo de pensiones</p>
                     </div>
-                    <div class="sello" id="sello-3" onclick="clickSello(3)">
+                    <div class="sello sello-normal" id="sello-3" onclick="clickSello(3,'azul')">
                         <img src="assets/images/sello-azul.png" class="sello-img" />
                         <img src="assets/images/sello-over.png" class="sello-img-over" />
                         <p>EPS</p>
                     </div>
-                    <div class="sello" id="sello-4" onclick="clickSello(4)">
+                    <div class="sello sello-normal" id="sello-4" onclick="clickSello(4,'azul')">
                         <img src="assets/images/sello-azul.png" class="sello-img" />
                         <img src="assets/images/sello-over.png" class="sello-img-over" />
                         <p>ARL</p>
                     </div>
                 </div>
                 <div id="sellos-rojos">
-                    <div class="sello" id="sello-5" onclick="clickSello(5)">
+                    <div class="sello sello-normal" id="sello-5" onclick="clickSello(5,'rojo')">
                         <img src="assets/images/sello-rojo.png" class="sello-img" />
                         <img src="assets/images/sello-over.png" class="sello-img-over" />
                         <p>100%</p>
                     </div>
-                    <div class="sello" id="sello-6" onclick="clickSello(6)">
+                    <div class="sello sello-normal" id="sello-6" onclick="clickSello(6,'rojo')">
                         <img src="assets/images/sello-rojo.png" class="sello-img" />
                         <img src="assets/images/sello-over.png" class="sello-img-over" />
                         <p>66.67%</p>
                     </div>
-                    <div class="sello" id="sello-7" onclick="clickSello(7)">
+                    <div class="sello sello-normal" id="sello-7" onclick="clickSello(7,'rojo')">
                         <img src="assets/images/sello-rojo.png" class="sello-img" />
                         <img src="assets/images/sello-over.png" class="sello-img-over" />
                         <p>50%</p>
@@ -85,10 +85,8 @@
                         <img src="assets/images/tiquete-borde.svg" />
                         <div id="tiquetera-hoja-content">
                             <h1>Resultado del trámite</h1>
-                            <h2 id="tiquete-titulo">Atención al detalle</h2>
-                            <p id="tiquete-texto">
-                                Has respondido bien al reconocimiento nominal pero no quien es el <span>responsable</span>
-                            </p>
+                            <h2 id="tiquete-titulo">...</h2>
+                            <p id="tiquete-texto">...</p>
                         </div>
                     </div>
                 </div>
@@ -120,8 +118,8 @@
                                     <p class="input" id="periodo-limpio">...</p>
                                 </div>
                                 <div class="hoja-row">
-                                    <p class="label">Pendiente pago</p>
-                                    <p class="input2" id="pendiente-limpio">...</p>
+                                    <p class="label">Estado</p>
+                                    <p class="input2" id="estado-limpio">...</p>
                                 </div>
                             </div>
                         </div>
@@ -130,12 +128,12 @@
                             <h1>Zona de validación (Estampe aqui)</h1>
                             <div class="hoja-col">
                                 <div class="hoja-row">
-                                    <div class="hoja-estampa hoja-estampa-1">
+                                    <div class="hoja-estampa-1">
                                         <p>Responsable</p>
                                     </div>
                                 </div>
                                 <div class="hoja-row">
-                                    <div class="hoja-estampa hoja-estampa-2">
+                                    <div class="hoja-estampa-2">
                                         <p>Reconocimiento nominal</p>
                                     </div>
                                 </div>
@@ -148,7 +146,7 @@
                         <h1 class="hoja-titulo">Solicitud de pago</h1>
                         <div class="hoja-col">
                             <div class="hoja-row hoja-row-20">
-                                <img id="foto-principal" src="assets/images/fotos/1.png" />
+                                <img id="foto-principal" src="" />
                             </div>
                             <div class="hoja-row hoja-row-80">
                                 <p class="label">Colaborador</p>
@@ -168,8 +166,8 @@
                                     <p class="input" id="periodo-principal">...</p>
                                 </div>
                                 <div class="hoja-row">
-                                    <p class="label">Pendiente pago</p>
-                                    <p class="input2" id="pendiente-principal">...</p>
+                                    <p class="label">Estado</p>
+                                    <p class="input2" id="estado-principal">...</p>
                                 </div>
                             </div>
                         </div>
@@ -178,20 +176,20 @@
                             <h1>Zona de validación (Estampe aqui)</h1>
                             <div class="hoja-col">
                                 <div class="hoja-row">
-                                    <div class="hoja-estampa hoja-estampa-1">
+                                    <div class="hoja-estampa-1" id="sello-estampa-1" onclick="clickEstampa(event,1)">
                                         <p>Responsable</p>
-                                        <div id="hoja-sello-1">
+                                        <div id="hoja-sello-1" class="hoja-sello-off">
                                             <img src="assets/images/sello-azul-borde.svg" />
-                                            <p id="hoja-sello-txt-1">EPS</p>
+                                            <p>EPS</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="hoja-row">
-                                    <div class="hoja-estampa hoja-estampa-2">
+                                    <div class="hoja-estampa-2" id="sello-estampa-2" onclick="clickEstampa(event,2)">
                                         <p>Reconocimiento nominal</p>
-                                        <div id="hoja-sello-2">
+                                        <div id="hoja-sello-2" class="hoja-sello-off">
                                             <img src="assets/images/sello-rojo-borde.svg" />
-                                            <p id="hoja-sello-txt-2">100%</p>
+                                            <p>100%</p>
                                         </div>
                                     </div>
                                 </div>
@@ -381,7 +379,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 
     <div id="instruccion" class="instruccion-off">
@@ -402,12 +400,32 @@
         </div>
     </div>
 
+    <script src="assets/casos.js"></script>
     <script src="assets/js/instrucciones.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
         window.onload = function(){
+            prepareHoja()
             setAltoHoja()
-            //setInstrucciones()
+            loadImg({src: 'assets/images/sello-azul2-borde.svg', callBack: function(){
+                loadImg({src: 'assets/images/fotos/1.png', callBack: function(){
+                loadImg({src: 'assets/images/fotos/2.png', callBack: function(){
+                loadImg({src: 'assets/images/fotos/3.png', callBack: function(){
+                loadImg({src: 'assets/images/fotos/4.png', callBack: function(){
+                loadImg({src: 'assets/images/fotos/5.png', callBack: function(){
+                loadImg({src: 'assets/images/fotos/6.png', callBack: function(){
+                loadImg({src: 'assets/images/fotos/7.png', callBack: function(){
+                loadImg({src: 'assets/images/fotos/8.png', callBack: function(){
+                    //setInstrucciones()
+                }})
+                }})
+                }})
+                }})
+                }})
+                }})
+                }})
+                }})
+            }})
         }
 
         function setAltoHoja(){

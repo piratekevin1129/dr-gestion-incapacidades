@@ -21,14 +21,14 @@ var instrucciones_data = [{
     orientation:'left'
 },{
     title:'Responsable',
-    text:'Usa los sellos azules para indicar <span>Quien paga</span> (EPS, ARL, Empleador, etc.).<br><br>Para este caso (día 45), corresponde a la <span>EPS</span>',
+    text:'Usa los sellos azules para indicar <span>Quien paga</span> (EPS, ARL, Empleador, etc.)',
     icon:'2',
     value:'Entendido',
     ref:'sellos-azules',
     orientation:'top'
 },{
     title:'Liquidación',
-    text:'Usa los sellos rojos para definir <span>cuanto se paga</span><br>La ley varía el porcentaje según los días. Aquí aplica el 66.67%.',
+    text:'Usa los sellos rojos para definir <span>cuanto se paga</span><br>La ley varía el porcentaje según los días.',
     icon:'2',
     value:'Entendido',
     ref:'sellos-rojos',

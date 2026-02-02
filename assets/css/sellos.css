@@ -78,14 +78,17 @@
     text-shadow: 0px 0px 5px rgba(0,0,0,0.8);
 }
 
-.sello:hover{
+.sello-normal:hover,
+.sello-active{
     cursor: pointer;
     top: -10px;
 }
-.sello:hover .sello-img-over{
+.sello-normal:hover .sello-img-over,
+.sello-active .sello-img-over{
     opacity: 1;
 }
-.sello:hover::after{
+.sello-normal:hover::after,
+.sello-active::after{
     width: 80%;
     bottom: -10px;
     visibility: visible;

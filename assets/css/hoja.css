@@ -8,6 +8,22 @@
     bottom: 4%;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
+.hoja-estampada{
+    animation: animacion-hoja-estampada 0.15s 0.15s 1 forwards;
+}
+@keyframes animacion-hoja-estampada {
+    0%{
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+    50%{
+        transform: scale(0.98);
+        animation-timing-function: ease-in;
+    }
+    100%{
+        transform: scale(1);
+    }
+}
 
 #hoja-limpia,
 #hoja-principal{
@@ -27,6 +43,7 @@
     height: auto;
     padding-right: 5px;
     overflow-y: auto;
+    overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: #666666 #FFFFFF;
 }
@@ -84,12 +101,12 @@
     width: 100%;
     font-size: 16px;
     color: #000000;
-    text-transform: uppercase;
 }
 .label{
     font-family: 'Helvetica';
     font-size: 13px;
     margin-bottom: 5px;
+    text-transform: uppercase;
 }
 .input,
 .input2{
@@ -99,6 +116,7 @@
 }
 .input{
     font-family: 'SpecialElite-Regular';
+    text-transform: uppercase;
 }
 .input2{
     font-family: 'CourierPrime-Regular';
@@ -140,36 +158,56 @@
     color: #B91C1C;
 }
 
-.hoja-estampa{
+.hoja-estampa-1,
+.hoja-estampa-2{
     position: relative;
     display: block;
     width: 100%;
     height: 130px;
-    border: #B3B3B3 dashed 1px;
+    border: #B3B3B3 dashed 2px;
     padding: 10px;
+    cursor: crosshair;
 }
-.hoja-estampa > p{
+.hoja-estampa-1-active{
+    animation: animacion-hoja-estampa-1 0.8s infinite;
+}
+@keyframes animacion-hoja-estampa-1 {
+    0%,100%{
+        box-shadow: 0px 0px 0px 0px rgba(0,129,200,0);
+    }
+    50%{
+        box-shadow: 0px 0px 20px 0px rgba(0,129,200,0.75);
+    }
+}
+.hoja-estampa-2-active{
+    animation: animacion-hoja-estampa-2 0.8s infinite;
+}
+@keyframes animacion-hoja-estampa-2 {
+    0%,100%{
+        box-shadow: 0px 0px 0px 0px rgba(246,50,50,0);
+    }
+    50%{
+        box-shadow: 0px 0px 20px 0px rgba(246,59,50,0.75);
+    }
+}
+.hoja-estampa-1 > p,
+.hoja-estampa-2 > p{
     width: 100%;
     font-family: 'SpecialElite-Regular';
     font-size: 16px;
     text-align: center;
     margin-bottom: 20px;
 }
-.hoja-estampa-1 p{
-    color: #0081C8;
-}
-.hoja-estampa-2 p{
-    color: #F63232;
-}
+.hoja-estampa-1 p{color: #0081C8;}
+.hoja-estampa-2 p{color: #F63232;}
+
 #hoja-sello-1,
 #hoja-sello-2{
     position: absolute;
     width: 90%;
     height: auto;
     margin: 0px auto;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    transform-origin: 0% 0%;
 }
 #hoja-sello-1 img,
 #hoja-sello-2 img{
@@ -192,6 +230,54 @@
     font-size: 16px;
     text-align: center;
     text-transform: uppercase;
+}
+
+.hoja-sello-off{
+    visibility: hidden;
+}
+.hoja-sello-1-on,
+.hoja-sello-2-on{
+    visibility: visible;
+    animation-duration: 0.15s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+.hoja-sello-1-on{
+    animation-name: animacion-sello-1;
+}
+@keyframes animacion-sello-1 {
+    0%{
+        opacity: 0;
+        transform: scale(2) translate(-50%,-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1) rotate(-5deg) translate(-50%,-50%);
+    }
+}
+.hoja-sello-2-on{
+    animation-name: animacion-sello-2;
+}
+@keyframes animacion-sello-2 {
+    0%{
+        opacity: 0;
+        transform: scale(2) translate(-50%,-50%);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1) rotate(5deg) translate(-50%,-50%);
+    }
+}
+.hoja-sello-1-onn{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotate(-5deg) translate(-50%,-50%);
+}
+.hoja-sello-2-onn{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotate(5deg) translate(-50%,-50%);
 }
 
 /*******************/

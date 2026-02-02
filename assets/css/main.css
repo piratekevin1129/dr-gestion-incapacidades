@@ -94,7 +94,6 @@ button{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-image: url(../images/fotos/1.png);
 }
 
 #app{
@@ -114,7 +113,6 @@ button{
     width: auto;
     height: auto;
     border-radius: 4px;
-    background-color: #E20613;
     border: none;
     padding: 10px 15px;
     text-transform: uppercase;
@@ -127,7 +125,7 @@ button{
     top: 0px;
     cursor: pointer;
 
-    transition: box-shadow 0.25s, top 0.25s, filter 0.25s, opacity 0.25s;
+    transition: box-shadow 0.25s, top 0.25s, filter 0.25s, opacity 0.25s, background-color 0.25s;
 }
 #comprobar-btn::after{
     content: "";
@@ -140,19 +138,23 @@ button{
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
 
-.comprobar-btn-enabled:active{
-    box-shadow: 0px 0px 0px 0px #870613;
-    top: 5px;
-}
-
 .comprobar-btn-disabled{
     cursor: not-allowed;
+    background-color: #E20613;
     filter: grayscale(100%);
     opacity: 0.75;
 }
+
 .comprobar-btn-enabled{
+    background-color: #E20613;
     cursor: pointer;
     filter: grayscale(0%);
     opacity: 1;
 }
-
+.comprobar-btn-enabled:active{
+    box-shadow: 0px 0px 0px 0px #870613;
+    top: 5px;
+}
+.comprobar-btn-enabled:hover{
+    background-color: #870613;
+}

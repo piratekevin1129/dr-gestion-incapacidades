@@ -24,17 +24,17 @@
 #tiquetera-hoja-wrap{
     position: absolute;
     width: 82%;
-    height: 200px;
+    height: 0px;
     left: 9%;
     bottom: 41%;
     overflow: hidden;
 
-    transition: height 0.2s;
+    transition: height 0.15s;
 }
 #tiquetera-hoja{
     position: relative;
     width: 100%;
-    height: auto;
+    height: 205px;
 }
 #tiquetera-hoja > img{
     position: relative;
@@ -53,7 +53,7 @@
 }
 #tiquetera-hoja-content > h1,
 #tiquetera-hoja-content > h2{
-    color: #000000;
+    color: #666666;
     text-align: center;
     width: 100%;
 }
@@ -72,10 +72,16 @@
     width: 100%;
     font-family: 'Helvetica';
     font-size: 15px;
-    color: #854D0E;
+    color: #000000;
     text-align: center;
 }
 #tiquete-texto span{
     font-family: 'Helvetica-Bold';
+    text-transform: uppercase;
+}
+.tiquete-texto-span-1{
     color: #0081C8;
+}
+.tiquete-texto-span-2{
+    color: #F63232;
 }
