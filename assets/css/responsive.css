@@ -1,0 +1,365 @@
+@media (min-width: 1537px) {
+
+    #loader-img{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    #loader-bar{
+        width: 300px;
+        height: 15px;
+        border-radius: 10px;
+    }
+    #loader-bar2{
+        border-radius: 10px;
+    }
+
+    #titulo h1,#titulo h2{
+        font-size: 31px;
+    }
+    #titulo h1{
+        margin: 10px 0px;
+    }
+    #titulo h2{
+        padding: 10px 20px;
+    }
+
+    #personaje{
+        width: 600px;
+        height: 100%;
+        height: calc(100% - 200px);
+        height: -moz-calc(100% - 200px);
+        left: 50%;
+        left: calc(50% - 300px);
+        left: -moz-calc(50% - 300px);
+        top: 200px;
+    }
+
+    #ref-comprobar{
+        width: 300px;
+        height: 52px;
+        bottom: 20px;
+        right: 20px; 
+    }
+
+    #comprobar-btn{
+        border-radius: 8px;
+        font-size: 24px;
+    }
+    #comprobar-btn::after{
+        border-radius: 8px;
+    }
+
+    /***********************/
+
+    #hoja-container{
+        width: 30%;
+        width: calc(50% - (300px + 60px));
+        width: -moz-calc(50% - (300px + 60px));
+        left: 30px;
+        height: 800px;
+        top: 50%;
+        top: calc(50% - (800px / 2));
+        top: -moz-calc(50% - (80px / 2));
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+    }
+
+    #hoja-limpio,
+    #hoja-principal{
+        padding: 25px;
+    }
+
+    .hoja-titulo{
+        width: 100%;
+        padding: 10px 0px 20px 0px;
+        border-bottom: #E20613 solid 2px;
+
+        font-size: 27px;
+    }
+    .hoja-col{
+        margin: 20px 0px;
+    }
+
+    .hoja-col .hoja-row:first-child{
+        padding-right: 12px;
+    }
+    .hoja-col .hoja-row:last-child{
+        padding-left: 12px;
+    }
+
+    .hoja-row-20 img{
+        max-height: 150px;
+    }
+
+    .label,
+    .input,
+    .input2{
+        font-size: 20px;
+    }
+    .label{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .input,
+    .input2{
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: #000000 dashed 2px;
+    }
+
+    .hoja-detalles,
+    .hoja-validacion{
+        border-radius: 12px;
+        padding: 0px 25px 0px 25px;
+    }
+    .hoja-detalles{
+        margin-bottom: 30px;
+    }
+    .hoja-detalles > h1,
+    .hoja-validacion > h1{
+        padding: 8px;
+        font-size: 21px;
+    }
+
+    .hoja-estampa-1,
+    .hoja-estampa-2{
+        height: 170px;
+        padding: 15px;
+    }
+
+    .hoja-estampa-1 > p,
+    .hoja-estampa-2 > p{
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    #hoja-sello-1,
+    #hoja-sello-2{
+        width: 90%;
+    }
+    #hoja-sello-1 p,
+    #hoja-sello-2 p{
+        font-size: 20px;
+    }
+
+    /*******************/
+
+    #tiquete{
+        width: 300px;
+        height: 56px;
+        bottom: 20%;
+        left: 50%;
+        left: calc(50% - 300px);
+        left: -moz-calc(50% - 300px);
+    }
+
+    #tiquetera-hoja-wrap{
+        width: 82%;
+        bottom: 41%;
+        left: 9%;
+    }
+
+    .tiquetera-hoja{
+        width: 100%;
+        height: 230px;
+    }
+
+    .tiquetera-hoja-content-top,
+    .tiquetera-hoja-content-bottom{
+        height: 14px;
+    }
+
+    #tiquetera-hoja-content{
+        height: 202px;
+        padding: 15px;
+    }
+    #tiquetera-hoja-content > h1{
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+    #tiquetera-hoja-content > h2{
+        font-size: 18px;
+    }
+    #tiquete-texto{
+        margin-top: 15px;
+        font-size: 16px;
+    }
+    #tiquete-texto span{
+        font-size: 16px;
+    }
+
+    /***********/
+
+    .tiquetera-hoja-wrap-hide{
+        height: 0px;
+    }
+    .tiquetera-hoja-wrap-out{
+        height: 230px;
+    }
+    .tiquetera-hoja-wrap-out2{
+        height: 230px;
+        animation: animacion-tiquetera2-out 0.5s 3s 1 forwards ease-in;
+    }
+
+    .tiquetera-hoja-wrap-out .tiquetera-hoja{
+        animation: animacion-tiquetera-out-xl 1s 1 forwards ease-out;
+    }
+    
+    .tiquetera-hoja-wrap-out2 .tiquetera-hoja{
+        top: 14px;
+        animation: animacion-tiquetera22-out-xl 0.2s 3s 1 forwards ease-out;
+    }
+    
+
+    /*******************/
+
+    #sellos{
+        width: auto;
+        width: calc((140px * 4) + (10px * 3));
+        width: -moz-calc((140px * 4) + (10px * 3));
+        height: 174px;
+        height: calc(174px + (174px / 2));
+        height: -moz-calc(174px + (174px / 2));
+        left: 50%;
+        left: calc(50% + 30px);
+        left: -moz-calc(50% + 30px);
+        bottom: 20%;
+    }
+    #sellos-azules{
+        width: 100%;
+        height: 174px;
+    }
+    #sellos-rojos{
+        height: 174px;
+    }
+    .sello{
+        width: 140px;
+        height: 174px;
+    }
+
+    .sello p{
+        width: 80%;
+        height: 30%;
+        top: 14%;
+        left: 10%;
+        font-family: 'Helvetica-Bold';
+        font-size: 16px;
+    }
+
+    .sello-normal:hover,
+    .sello-active{
+        cursor: pointer;
+        top: -15px;
+    }
+
+    /*******************/
+
+    #instruccion-box{
+        width: 500px;
+        padding: 40px;
+        padding-top: 80px;
+        border-radius: 12px;
+        border-top: #E20613 solid 5px;
+        left: 50%;
+        left: calc(50% - 250px);
+        left: -moz-calc(50% - 250px);
+        top: 50%;
+        top: calc(50% - 250px);
+        top: -moz-calc(50% - 250px);
+    }
+    #instruccion-box-icon{
+        top: -60px;
+        left: 50%;
+        left: calc(50% - 50px);
+        left: -moz-calc(50% - 50px);
+        width: 120px;
+        height: 120px;
+        border: #ffffff solid 7px;
+        background-size: 65px;
+    }
+    #instruccion-title{
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    #instruccion-text{
+        padding: 15px;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    #instruccion-btn{
+        height: 50px;
+        border-radius: 6px;
+        font-size: 21px;
+    }
+
+    /*****************************/
+
+    #manual{
+        bottom: 20%;
+        right: 30px;
+    }
+
+    #manual-container-box{
+        width: 60%;
+        height: 80%;
+        height: calc(100% - 40px);
+        height: -moz-calc(100% - 40px);
+        padding: 40px;
+    }
+
+    #manual-container-close-btn{
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        border: none;
+        top: 10px;
+        right: 10px;
+
+        transition: background-color 0.25s;
+    }
+    #manual-container-close-btn::after,
+    #manual-container-close-btn::before{
+        width: 25px;
+        border-radius: 3px;
+    }
+
+    .manual-container-hoja > h1{
+        font-size: 27px;
+        margin-bottom: 20px;
+    }
+    .manual-container-hoja > h2{
+        font-size: 24px;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        padding: 7px 15px;
+        background-color: #E0E0E0;
+    }
+    .manual-container-hoja > table th{
+        padding: 10px 15px;
+    }
+    .manual-container-hoja > table td{
+        padding: 10px 15px;
+    }
+    .manual-container-hoja > table th p{
+        font-size: 21px;
+    }
+    .manual-container-hoja > table td p{
+        font-size: 18px;
+    }
+
+    #manual:hover{
+        bottom: 20%;
+        bottom: calc(20% + 15px);
+        bottom: -moz-calc(20% + 15px);
+    }
+
+    /******************************/
+}
+
+/*@media (min-width: 1281px) and (max-width: 1537px){
+    --default
+}*/
+
+@media (min-width: 960px) and (max-width: 1280px){
+
+}

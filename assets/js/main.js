@@ -172,11 +172,11 @@ function comprobarExpediente(){
         }
         
         if(acierto_1==true&&acierto_2==false){
-            getE('tiquete-titulo').innerHTML = 'Atención al detalles'
+            getE('tiquete-titulo').innerHTML = 'Atención al detalle'
             getE('tiquete-texto').innerHTML = 'Has respondido bien el <span class="tiquete-texto-span-1">responsable</span> pero no el <span class="tiquete-texto-span-2">reconocimiento nominal</span>.'
         }else if(acierto_1==false&&acierto_2==true){
-            getE('tiquete-titulo').innerHTML = 'Atención al detalles'
-            getE('tiquete-texto').innerHTML = 'Has respondido bien el <span class="tiquete-texto-span-2">reconocimiento nominal</span> pero no el <span class="tiquete-texto-span-2">responsable</span>.'
+            getE('tiquete-titulo').innerHTML = 'Atención al detalle'
+            getE('tiquete-texto').innerHTML = 'Has respondido bien el <span class="tiquete-texto-span-2">reconocimiento nominal</span> pero no el <span class="tiquete-texto-span-1">responsable</span>.'
         }else if(acierto_1==false&&acierto_2==false){
             getE('tiquete-titulo').innerHTML = 'Rechazado'
             getE('tiquete-texto').innerHTML = 'Recuerda consultar el <span>Manual de Normativa</span> antes de responder.'
@@ -205,30 +205,34 @@ function comprobarExpediente(){
                 getE('tiquetera-hoja-wrap').className = 'tiquetera-hoja-wrap-hide'
 
                 //colocar información 2 en la hoja de abajo
-                current_caso++;
-                prepareHoja2()
-                //pasar siguiente hoja
-                getE('pagina').className = 'pagina-in'
-                getE('hoja-principal').className = 'hoja-in'
-                getE('personaje-foto').className = 'personaje-out'
-    
-                animation_hoja = setTimeout(function(){
-                    clearTimeout(animation_hoja)
-                    animation_hoja = null;
-    
-                    estampas_data = [0,0]
-    
-                    //reiniciar hoja de abajo y colocar la nueva
-                    resetHoha2()
-                    prepareHoja()
-                    getE('personaje-foto').className = 'personaje-in'
-                    getE('pagina').className = 'pagina-out'
-                    getE('hoja-principal').className = 'hoja-out'
-                    animating_tiquete = false;
-    
-                },1500)
+                if(current_caso<(casos_data.length-1)){
+                    current_caso++;
+                    prepareHoja2()
+                    //pasar siguiente hoja
+                    getE('pagina').className = 'pagina-in'
+                    getE('hoja-principal').className = 'hoja-in'
+                    getE('personaje-foto').className = 'personaje-out'
+                    
+                    animation_hoja = setTimeout(function(){
+                        clearTimeout(animation_hoja)
+                        animation_hoja = null;
+        
+                        estampas_data = [0,0]
+                        
+                        //reiniciar hoja de abajo y colocar la nueva
+                        resetHoha2()
+                        prepareHoja()
+                        getE('personaje-foto').className = 'personaje-in'
+                        getE('pagina').className = 'pagina-out'
+                        getE('hoja-principal').className = 'hoja-out'
+                        animating_tiquete = false;
+        
+                    },1500)
+                    pagina_mp3.play()
+                }else{
+                    alert("aqui terminamos")
+                }
 
-                pagina_mp3.play()
             },3500)
 
             if(acierto_1==true&&acierto_2==true){

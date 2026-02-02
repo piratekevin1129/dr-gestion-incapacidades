@@ -71,6 +71,9 @@
     align-items: flex-start;
     flex-wrap: wrap;
 }
+.mt-0{
+    margin-top: 0px !important;
+}
 
 .hoja-row{
     width: 50%;

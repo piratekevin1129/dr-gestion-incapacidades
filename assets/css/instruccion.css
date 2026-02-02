@@ -26,8 +26,8 @@
     border-radius: 8px;
     border-top: #E20613 solid 3px;
     left: 50%;
-    left: calc(50% - 350px);
-    left: -moz-calc(50% - 350px);
+    left: calc(50% - 175px);
+    left: -moz-calc(50% - 175px);
     top: 50%;
     top: calc(50% - 150px);
     top: -moz-calc(50% - 150px);

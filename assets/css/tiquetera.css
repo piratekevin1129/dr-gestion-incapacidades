@@ -19,11 +19,13 @@
     position: absolute;
     top: 0px;
     left: 0px;
+    z-index: 2;
 }
 
 #tiquetera-hoja-wrap{
     position: absolute;
     width: 82%;
+    bottom: 41%;
     left: 9%;
     overflow: hidden;
     transform-origin: left bottom;
@@ -94,27 +96,32 @@
 /***********/
 
 .tiquetera-hoja-wrap-hide{
-    bottom: 41%;
     height: 0px;
 }
 .tiquetera-hoja-wrap-out{
-    bottom: 41%;
     height: 205px;
 }
 .tiquetera-hoja-wrap-out2{
-    bottom: 41%;
     height: 205px;
     animation: animacion-tiquetera2-out 0.5s 3s 1 forwards ease-in;
 }
 @keyframes animacion-tiquetera2-out{
     0%{
-        bottom: 41%;
-        transform: rotate(0deg);
+        transform: rotate(0deg) translateY(0px);
         opacity: 1;
     }
     100%{
-        bottom: 200%;
-        transform: rotate(-30deg);
+        transform: rotate(-30deg) translateY(-40px);
+        opacity: 0;
+    }
+}
+@keyframes animacion-tiquetera2-out-xl {
+    0%{
+        transform: rotate(0deg) translateY(0px);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(-30deg) translateY(-60px);
         opacity: 0;
     }
 }
@@ -127,9 +134,34 @@
         top: 100%;
     }
     100%{
-        top: 0%;
+        top: 10px;
     }
 }
+@keyframes animacion-tiquetera-out-xl {
+        0%{
+            top: 100%;
+        }
+        100%{
+            top: 14px;
+        }
+    }
 .tiquetera-hoja-wrap-out2 .tiquetera-hoja{
-    top: 0%;
+    top: 10px;
+    animation: animacion-tiquetera22-out 0.2s 3s 1 forwards ease-out;
 }
+@keyframes animacion-tiquetera22-out {
+    0%{
+        top: 10px;
+    }
+    100%{
+        top: 0px;
+    }
+}
+@keyframes animacion-tiquetera22-out-xl {
+        0%{
+            top: 14px;
+        }
+        100%{
+            top: 0px;
+        }
+    }
