@@ -71,24 +71,14 @@ function prepareInstruccion(){
 
     if(instrucciones_data[current_instruccion].ref!=null){
         var rect_ref = getE(instrucciones_data[current_instruccion].ref).getBoundingClientRect()
-        var wl = (rect_ref.left-20)
-        getE('instruccion-back-left').style.width = wl+'px'
-        getE('instruccion-back-left').style.height = '100%'
-        getE('instruccion-back-left').style.top = '0%'
+        var wl = (rect_ref.left - 20)
         var wr = (window.innerWidth - ((rect_ref.width + 20) + rect_ref.left))
-        getE('instruccion-back-right').style.width = wr+'px'
-        getE('instruccion-back-right').style.height = '100%'
-        getE('instruccion-back-right').style.top = '0%'
-        var wt = (rect_ref.width + 40)
         var ht = (rect_ref.top - 20)
-        getE('instruccion-back-top').style.width = wt+'px'
-        getE('instruccion-back-top').style.height = ht+'px'
-        getE('instruccion-back-top').style.left = wl+'px'
-        var wb = wt
         var hb = (window.innerHeight - (rect_ref.top + rect_ref.height + 20))
-        getE('instruccion-back-bottom').style.width = wb+'px'
-        getE('instruccion-back-bottom').style.height = hb+'px'
-        getE('instruccion-back-bottom').style.left = wl+'px'
+        getE('instruccion-back-mask').style.borderLeftWidth = wl+'px'
+        getE('instruccion-back-mask').style.borderRightWidth = wr+'px'
+        getE('instruccion-back-mask').style.borderTopWidth = ht+'px'
+        getE('instruccion-back-mask').style.borderBottomWidth = hb+'px'
         
         if(instrucciones_data[current_instruccion].orientation=='top'){
             left_box = (rect_ref.left + (rect_ref.width / 2)) - (rect_box.width / 2)
@@ -102,18 +92,12 @@ function prepareInstruccion(){
         }
 
     }else{
-        getE('instruccion-back-left').style.width = '45%'
-        getE('instruccion-back-left').style.height = '100%'
-        getE('instruccion-back-left').style.top = '0%'
-        getE('instruccion-back-right').style.width = '45%'
-        getE('instruccion-back-right').style.height = '100%'
-        getE('instruccion-back-right').style.top = '0%'
-        getE('instruccion-back-top').style.width = '10%'
-        getE('instruccion-back-top').style.height = '50%'
-        getE('instruccion-back-top').style.left = '45%'
-        getE('instruccion-back-bottom').style.width = '10%'
-        getE('instruccion-back-bottom').style.height = '50%'
-        getE('instruccion-back-bottom').style.left = '45%'
+        var w2 = (rect_box.left + (rect_box.width / 2))
+        var h2 = (rect_box.top + (rect_box.height / 2))
+        getE('instruccion-back-mask').style.borderLeftWidth = w2+'px'
+        getE('instruccion-back-mask').style.borderRightWidth = w2+'px'
+        getE('instruccion-back-mask').style.borderTopWidth = h2+'px'
+        getE('instruccion-back-mask').style.borderBottomWidth = h2+'px'
 
         left_box = (window.innerWidth / 2) - (rect_box.width / 2)
         top_box = (window.innerHeight / 2) - (rect_box.height / 2)
@@ -124,6 +108,12 @@ function prepareInstruccion(){
 }
 
 function nextInstruccion(){
-    current_instruccion++
-    prepareInstruccion()
+    if(current_instruccion==(instrucciones_data.length-1)){
+        getE('instruccion').className = "instruccion-off"
+
+        
+    }else{
+        current_instruccion++
+        prepareInstruccion()
+    }
 }

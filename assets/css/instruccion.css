@@ -1,35 +1,20 @@
-#instruccion-back > div{
-    position: absolute;
-    background-color: rgba(0,0,0,0.65);
+#instruccion-back{
+    overflow: hidden;
 }
 
-#instruccion-back-left{
-    top: 0px;
-    left: 0%;
-    width: 45%;
-    height: 100%;
-    transition: width 0.3s, height 0.3s, top 0.3s;
+#instruccion-back > div{
+    position: absolute;
 }
-#instruccion-back-right{
-    top: 0px;
-    right: 0%;
-    width: 45%;
+
+#instruccion-back-mask{
+    width: 100%;
     height: 100%;
-    transition: width 0.3s, height 0.3s, top 0.3s;
-}
-#instruccion-back-top{
     top: 0%;
-    left: 45%;
-    width: 10%;
-    height: 50%;
-    transition: width 0.3s, height 0.3s, left 0.3s;
-}
-#instruccion-back-bottom{
-    bottom: 0%;
-    left: 45%;
-    width: 10%;
-    height: 50%;
-    transition: width 0.3s, height 0.3s, left 0.3s;
+    left: 0%;
+    background-color: rgba(0,0,0,0);
+    border-style: solid;
+    border-color: rgba(0,0,0,0.75);
+    transition: border 0.3s;
 }
 
 #instruccion-box{
@@ -106,6 +91,7 @@
 
 .instruccion-off{
     visibility: hidden;
+    /*transition: visibility 1s;*/
 }
 .instruccion-on{
     visibility: visible;
@@ -113,20 +99,20 @@
 
 .instruccion-off #instruccion-back{
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 0.5s;
 }
 .instruccion-on #instruccion-back{
     opacity: 1;
-    transition: opacity 1s;
+    transition: opacity 0.5s 0.5s;
 }
 
 .instruccion-on #instruccion-box{
     transform: translateY(0%);
     opacity: 1;
-    transition: transform 0.5s 0.5s, opacity 0.5s 0.5s, left 0.3s, top 0.3s;
+    transition: transform 0.5s, opacity 0.5s, left 0.3s, top 0.3s;
 }
 .instruccion-off #instruccion-box{
     transform: translateY(-10%);
     opacity: 0;
-    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s 0.5s, opacity 0.5s 0.5s;
 }
