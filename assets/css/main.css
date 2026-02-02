@@ -82,10 +82,11 @@ button{
     height: 100%;
     height: calc(100% - 100px);
     height: -moz-calc(100% - 100px);
-    top: 100px;
     left: 50%;
     left: calc(50% - 200px);
     left: -moz-calc(50% - 200px);
+    top: 100px;
+    overflow: hidden;
 }
 #personaje-foto{
     position: relative;
@@ -94,6 +95,16 @@ button{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+.personaje-in{
+    top: 0%;
+    opacity: 1;
+    transition: top 1s, opacity 1s;
+}
+.personaje-out{
+    top: 50%;
+    opacity: 0;
+    transition: top 1.5s, opacity 1.5s;
 }
 
 #app{

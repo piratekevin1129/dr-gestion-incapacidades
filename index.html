@@ -10,6 +10,7 @@
     <link href="assets/css/tiquetera.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/sellos.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/manual.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/instruccion.css" rel="stylesheet" type="text/css" />
     <title>Gestión de incapacidades</title>
 
@@ -28,11 +29,11 @@
             </div>
         </div>
         <div id="personaje">
-            <div id="personaje-foto"></div>
+            <div id="personaje-foto" class="personaje-in"></div>
         </div>
         <div id="mesa"></div>
         <div id="app">
-            <div id="manual">
+            <div id="manual" onclick="clickManual()">
                 <div class="manual-sombra"></div>
                 <img src="assets/images/libro.png" class="manual-img" />
                 <img src="assets/images/libro-over.png" class="manual-img-over" />
@@ -80,7 +81,7 @@
             </div>
             <div id="tiquete">
                 <img class="tiquete-img-base" src="assets/images/tiquete-ranura.svg" />
-                <div id="tiquetera-hoja-wrap">
+                <div id="tiquetera-hoja-wrap" class="tiquetera-hoja-wrap-hide">
                     <div class="tiquetera-hoja">
                         <div class="tiquetera-hoja-content-top"></div>
                         <div id="tiquetera-hoja-content">
@@ -94,12 +95,12 @@
                 <img class="tiquete-img-mask" src="assets/images/tiquete-mascara.svg" />
             </div>
             <div id="hoja-container">
-                <div id="hoja-limpia">
+                <div id="hoja-limpio">
                     <div class="hoja-wrapper">
                         <h1 class="hoja-titulo">Solicitud de pago</h1>
                         <div class="hoja-col">
                             <div class="hoja-row hoja-row-20">
-                                <img id="foto-limpia" src="" />
+                                <img id="foto-limpio" src="assets/images/fotos/default.png" />
                             </div>
                             <div class="hoja-row hoja-row-80">
                                 <p class="label">Colaborador</p>
@@ -147,7 +148,7 @@
                         <h1 class="hoja-titulo">Solicitud de pago</h1>
                         <div class="hoja-col">
                             <div class="hoja-row hoja-row-20">
-                                <img id="foto-principal" src="" />
+                                <img id="foto-principal" src="assets/images/fotos/default.png" />
                             </div>
                             <div class="hoja-row hoja-row-80">
                                 <p class="label">Colaborador</p>
@@ -211,7 +212,7 @@
             
             <div id="manual-container" class="manual-container-off">
                 <div id="manual-container-box">
-                    <button type="button" id="manual-container-close-btn"></button>
+                    <button type="button" id="manual-container-close-btn" onclick="cerrarManual()"></button>
                     <div class="manual-container-hoja">
                         <h1>Normatividad vigente</h1>
                         <h2>Enfermedad de origen común</h2>
@@ -402,12 +403,23 @@
     </div>
 
     <script src="assets/casos.js"></script>
+    <script src="assets/js/manual.js"></script>
     <script src="assets/js/instrucciones.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
+        var over_mp3 = null;
+        var click_mp3 = null;
+        var correcto_mp3 = null;
+        var incorrecto_mp3 = null;
+        var recibo_mp3 = null;
+        var pagina_mp3 = null;
+        var sello_click_mp3 = null;
+        var sello_over_mp3 = null;
+
         window.onload = function(){
             prepareHoja()
             setAltoHoja()
+
             loadImg({src: 'assets/images/sello-azul2-borde.svg', callBack: function(){
                 loadImg({src: 'assets/images/fotos/1.png', callBack: function(){
                 loadImg({src: 'assets/images/fotos/2.png', callBack: function(){
@@ -417,7 +429,36 @@
                 loadImg({src: 'assets/images/fotos/6.png', callBack: function(){
                 loadImg({src: 'assets/images/fotos/7.png', callBack: function(){
                 loadImg({src: 'assets/images/fotos/8.png', callBack: function(){
-                    //setInstrucciones()
+
+                    loadTrack({src: 'assets/sounds/over.mp3', callBack: function(data){
+                        over_mp3 = data
+                    }})
+                    loadTrack({src: 'assets/sounds/click.mp3', callBack: function(data){
+                        click_mp3 = data
+                    }})
+                    loadTrack({src: 'assets/sounds/correcto.mp3', callBack: function(data){
+                        correcto_mp3 = data
+                    }})
+                    loadTrack({src: 'assets/sounds/incorrecto.mp3', callBack: function(data){
+                        incorrecto_mp3 = data
+                    }})
+                    loadTrack({src: 'assets/sounds/recibo.mp3', callBack: function(data){
+                        recibo_mp3 = data
+                    }})
+                    loadTrack({src: 'assets/sounds/pagina.mp3', callBack: function(data){
+                        pagina_mp3 = data
+                    }})
+                    loadTrack({src: 'assets/sounds/sello_click.mp3', callBack: function(data){
+                        sello_click_mp3 = data
+                    }})
+                    loadTrack({src: 'assets/sounds/sello_over.mp3', callBack: function(data){
+                        sello_over_mp3 = data
+                    }})
+                    
+                    
+                    //getE('tiquetera-hoja-wrap').className = 'tiquetera-hoja-wrap-out'
+                    //getE('pagina').className = 'pagina-in'
+                    //getE('hoja-principal').className = 'hoja-in'
                 }})
                 }})
                 }})
@@ -429,12 +470,13 @@
             }})
         }
 
+        function comenzarJuego(){
+            setInstrucciones()
+        }
+
         function setAltoHoja(){
             var alto_hoja = getE('hoja-container').offsetHeight
             getE('hoja-principal').style.height = alto_hoja+'px'
-
-            //getE('pagina').className = 'pagina-in'
-            //getE('hoja-principal').className = 'hoja-in'
         }
     </script>
 </body>

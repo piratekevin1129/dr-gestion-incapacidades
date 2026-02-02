@@ -115,5 +115,6 @@ function nextInstruccion(){
     }else{
         current_instruccion++
         prepareInstruccion()
+        over_mp3.play()
     }
 }
