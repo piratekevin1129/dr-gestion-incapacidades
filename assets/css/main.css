@@ -4,6 +4,7 @@ html,body{
     height: 100%;
     margin: 0px;
     padding: 0px;
+    overflow: hidden;
 }
 h1,h2,h3,h4,h5,h6,p{
     margin: 0px;
@@ -113,16 +114,21 @@ button{
     height: 100%;
 }
 
-#comprobar{
+#ref-comprobar{
     position: absolute;
+    width: 230px;
+    height: 40px;
     bottom: 10px;
     right: 10px;    
 }
 
 #comprobar-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
     border: none;
     padding: 10px 15px;

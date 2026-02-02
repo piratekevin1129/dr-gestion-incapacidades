@@ -45,8 +45,8 @@ var instrucciones_data = [{
     text:'Una vez estampado, presiona este botón para <span>Archivar el expediente</span> y verificar si tu decisión fué correcta.',
     icon:'2',
     value:'Iniciar turno',
-    ref:null,
-    orientation:null
+    ref:'ref-comprobar',
+    orientation:'top'
 }]
 
 var current_instruccion = 0
@@ -72,16 +72,33 @@ function prepareInstruccion(){
     if(instrucciones_data[current_instruccion].ref!=null){
         var rect_ref = getE(instrucciones_data[current_instruccion].ref).getBoundingClientRect()
         var wl = (rect_ref.left - 20)
+        if(wl<0){
+            wl = 0
+        }
         var wr = (window.innerWidth - ((rect_ref.width + 20) + rect_ref.left))
+        if(wr<0){
+            wr = 0
+        }
         var ht = (rect_ref.top - 20)
+        if(ht<0){
+            ht = 0
+        }
         var hb = (window.innerHeight - (rect_ref.top + rect_ref.height + 20))
-        getE('instruccion-back-mask').style.borderLeftWidth = wl+'px'
-        getE('instruccion-back-mask').style.borderRightWidth = wr+'px'
-        getE('instruccion-back-mask').style.borderTopWidth = ht+'px'
-        getE('instruccion-back-mask').style.borderBottomWidth = hb+'px'
+        if(hb<0){
+            hb = 0
+        }
+
+        //console.log(rect_ref.width,rect_ref.left,rect_ref.height,rect_ref.top)
+        getE('instruccion-back-mask').style.borderLeftWidth = parseInt(wl)+'px'
+        getE('instruccion-back-mask').style.borderRightWidth = parseInt(wr)+'px'
+        getE('instruccion-back-mask').style.borderTopWidth = parseInt(ht)+'px'
+        getE('instruccion-back-mask').style.borderBottomWidth = parseInt(hb)+'px'
         
         if(instrucciones_data[current_instruccion].orientation=='top'){
             left_box = (rect_ref.left + (rect_ref.width / 2)) - (rect_box.width / 2)
+            if((left_box + rect_box.width) > window.innerWidth){
+                left_box = (window.innerWidth - (rect_box.width + 10))
+            }
             top_box = (rect_ref.top - (rect_box.height + 10))
         }else if(instrucciones_data[current_instruccion].orientation=='right'){
             left_box = (rect_ref.left + rect_ref.width + 10)
@@ -110,8 +127,10 @@ function prepareInstruccion(){
 function nextInstruccion(){
     if(current_instruccion==(instrucciones_data.length-1)){
         getE('instruccion').className = "instruccion-off"
-
-        
+        getE('comprobar-btn').className = 'comprobar-btn-disabled'
+        getE('comprobar-btn').disabled = true;
+        getE('comprobar-btn').setAttribute('onclick','comprobarExpediente()')
+        click_mp3.play()
     }else{
         current_instruccion++
         prepareInstruccion()

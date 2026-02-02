@@ -184,8 +184,8 @@ function comprobarExpediente(){
             getE('tiquete-titulo').innerHTML = 'Aprobado'
             getE('tiquete-texto').innerHTML = 'Has respondido correctamente'
         }
-    
-
+        
+        //sacar recibo
         getE('tiquetera-hoja-wrap').className = 'tiquetera-hoja-wrap-out'
         animation_tiquete = setTimeout(function(){
             clearTimeout(animation_tiquete)
@@ -237,9 +237,8 @@ function comprobarExpediente(){
                 incorrecto_mp3.play()
             }
 
-        },1000)
+        },1500)
 
-        click_mp3.play()
         recibo_mp3.play()
     }
 }

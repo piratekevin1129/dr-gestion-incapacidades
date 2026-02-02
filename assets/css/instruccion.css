@@ -91,7 +91,7 @@
 
 .instruccion-off{
     visibility: hidden;
-    /*transition: visibility 1s;*/
+    transition: visibility 1s;
 }
 .instruccion-on{
     visibility: visible;
