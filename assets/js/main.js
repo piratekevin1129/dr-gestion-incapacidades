@@ -231,6 +231,7 @@ function comprobarExpediente(){
                     pagina_mp3.play()
                 }else{
                     alert("aqui terminamos")
+                    //siguiente actividad aquí
                 }
 
             },3500)
